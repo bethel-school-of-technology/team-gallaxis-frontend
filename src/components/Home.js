@@ -1,9 +1,14 @@
 import React from 'react';
 
 const Home = () => {
-    <div>
-        <h3>Home Page</h3>
-    </div>
+    return (
+        <div>
+            <h1>Home Page</h1>
+            <h1>Nestly</h1>
+
+        </div>
+
+    )
 };
 
 export default Home;

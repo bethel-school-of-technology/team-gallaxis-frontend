@@ -2,10 +2,10 @@
 import './App.css';
 
 import React from 'react';
-import Home from './components/homepage';
-import Register from './components/RegisterPage';
+import Home from './components/Home';
+import Register from './components/Register';
 //import Main from './components/Main';//
-import LostAndFound from './components/lostandfoundpage';
+import LostAndFound from './components/LostAndFoundpage';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 

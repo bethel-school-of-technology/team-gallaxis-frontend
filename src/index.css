@@ -1,7 +1,7 @@
 body {
-  margin: 0;
+  margin: 10;
   background-color: yellow;
-  border-bottom: 1em;
+  border-bottom: 5em;
   border-style: ridge;
   border-color: aqua;
   padding-top: 0;

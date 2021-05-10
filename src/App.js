@@ -1,10 +1,8 @@
 
 import './App.css';
-
 import React from 'react';
 import Home from './components/Home';
 import Register from './components/Register';
-//import Main from './components/Main';//
 import LostAndFound from './components/LostAndFound';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 

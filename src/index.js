@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+//import App from './App';//
 import { useFormik } from 'formik';
 
 const HomeComponent = () => {
@@ -25,14 +25,14 @@ const HomeComponent = () => {
           <form>
             <label>
               UserName:
-    <input type="text" UserName="UserName" />
+    <input type="text" name="UserName" />
             </label>
 
           </form>
           <form>
             <label>
               Password:
-    <input type="text" Password="Password" />
+    <input type="text" name="Password" />
             </label>
             <input type="submit" value="Sign In" />
           </form>
@@ -59,3 +59,5 @@ const HomeComponent = () => {
 const element = <HomeComponent></HomeComponent>
 
 ReactDOM.render(element, document.getElementById('root'));
+
+

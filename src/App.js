@@ -1,24 +1,32 @@
 
 import './App.css';
-
 import React from 'react';
-import Home from './components/homepage';
-import Register from './components/RegisterPage';
-//import Main from './components/Main';//
-import LostAndFound from './components/lostandfoundpage';
+import Home from './components/Home';
+import Register from './components/Register';
+import LostAndFound from './components/LostAndFound';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 
+//function App() {
+//return (
+// <div className='App'>
+//   <h1>Hello Nestly Neighbors!</h1>
+//  </div>//
+//);//
+//}//
+
 export default function App() {
 
-  <Router>
+  return (
+    <Router>
 
-    <Route exact path="/" component={Home} />
-    <Route path="/Register" component={Register} />
-    {/* <Route path="/Main" component={Main} /> */}
-    <Route path="/LostAndFound" component={LostAndFound} />
+      <Route exact path="/" component={Home} />
+      <Route path="/Register" component={Register} />
+      {/* <Route path="/Main" component={Main} /> */}
+      <Route path="/LostAndFound" component={LostAndFound} />
 
 
-  </Router>
+    </Router>
 
+  )
 }

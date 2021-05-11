@@ -7,6 +7,14 @@ import LostAndFound from './components/LostAndFound';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 
+//function App() {
+//return (
+// <div className='App'>
+//   <h1>Hello Nestly Neighbors!</h1>
+//  </div>//
+//);//
+//}//
+
 export default function App() {
 
   return (

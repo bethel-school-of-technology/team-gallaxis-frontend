@@ -1,7 +1,7 @@
 import { validateYupSchema } from 'formik';
 import React, { useState } from 'react';
-import App from '../App';
 import UseForm from '../useForm'
+
 
 const Register = () => {
     const [values, setValues] = useState({

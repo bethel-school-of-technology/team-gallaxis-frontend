@@ -1,58 +1,91 @@
-import React from 'react';
+import { validateYupSchema } from 'formik';
+import React, { useState } from 'react';
+import UseForm from '../useForm'
 
-//import './index.css';//
-
-import { useFormik } from 'formik';
 
 const Home = () => {
-    const formik = useFormik({
-        initialValues: {
-            Id: '',
-            Name: '',
-            email: '',
-            Neighborhood: '',
-        },
-        onSubmit: values => {
-            alert(JSON.stringify(values));
-        }
-    });
+    const [values, setValues] = useState({
+        username: '',
+        email: '',
+        password: '',
+        password2: '',
+
+    })
+
+
+
+    const handleChange = e => {
+        const { name, value } = e.target
+        setValues({
+            ...values,
+            [name]: value
+
+        })
+    }
+
+
     return (
-        <div>
-            <h2> Welcome To NESTLY!</h2>
+        <div className='form-content-right'>
+            <form className='form'>
+                <h1> Welcome to NESTLY where you connect with your CommUNITY</h1>
+                <div className='form-inputs'>
+                    <label htmlFor='username'
+                        className='form-label'>
+                        UserName
+                    </label>
+                    <input
+                        id='username'
+                        type='text'
+                        name='username'
+                        className='form-input'
+                        placeholder='Enter your username'
+                        value={values.username}
+                        onChange={handleChange}
+                    />
+                </div>
 
-            <form onSubmit={formik.handleSubmit}>
-                <p>
-                    <form>
-                        <label>
-                            UserName:
-    <input type="text" name="UserName" />
-                        </label>
 
-                    </form>
-                    <form>
-                        <label>
-                            Password:
-    <input type="text" name="Password" />
-                        </label>
-                        <input type="submit" value="Sign In" />
-                    </form>
-                    <form>
-                        <label>
-                            Register:
-    <input type="text" name="Register" />
-                        </label>
-                        <input type="submit" value="Register" />
-                    </form>
-                </p>
+                <div className='form-inputs'>
+                    <label htmlFor='Password'
+                        className='form-label'>
+                    </label>
+                        Password
+                        <input
+                        id='Password'
+                        type='Password'
+                        name='Password'
+                        className='form-input'
+                        placeholder='Enter your Password'
+                        value={values.password}
+                        onChange={handleChange}
+                    />
+                </div>
+                <div className='form-inputs'>
+                    <label htmlFor='email'
+                        className='form-label'>
 
+                        Confirm Password
+                    </label>
+                    <input
+                        id='Password2'
+                        type='Password'
+                        name='Password2'
+                        className='form-input'
+                        placeholder='Enter your Password'
+                        value={values.password2}
+                        onChange={handleChange}
+                    />
+                </div>
+                <button className='form-input-btn'
+                    type='submit'>
+                    Sign up!
+                </button>
+                <span className="form-input-login">
+                    Already have an account? Login <a href="#">here</a>
+                </span>
             </form>
-        </div>
-
-
-
-
+        </div >
     )
-}
+};
 
-
-export default Home
+export default Home;

@@ -1,9 +1,10 @@
 
 import React, { useState } from 'react';
-
+import UserNavBar from './UserNavBar.Js';
 
 
 const Register = () => {
+    <UserNavBar/>
     const [values, setValues] = useState({
         username: '',
         email: '',

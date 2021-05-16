@@ -1,6 +1,6 @@
-import { validateYupSchema } from 'formik';
+
 import React, { useState } from 'react';
-import UseForm from '../useForm'
+
 
 
 const Home = () => {
@@ -11,8 +11,6 @@ const Home = () => {
         password2: '',
 
     })
-
-
 
     const handleChange = e => {
         const { name, value } = e.target

@@ -25,9 +25,15 @@ export default function App() {
       <Route path="/Register" component={Register} />
       {/* <Route path="/Main" component={Main} /> */}
       <Route path="/BuySell" component={BuySell} />
-
-
+      <div>
+        <ul>
+          <li><Link to="/Home">Home</Link></li>
+          <li><Link to="/Register">Register</Link></li>
+          <li><Link to="/BuySell">BuySell</Link></li>
+        </ul>
+      </div>
     </Router>
 
   )
+
 }

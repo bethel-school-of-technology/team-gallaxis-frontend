@@ -33,7 +33,7 @@ const Register = (props) => {
                 <input type="text" placeholder="Enter Email" name="email" onChange={evt => setEmail(evt.target.value)}></input>
 
                 <input type="text" placeholder="Enter Neighborhood" name="neighborhood" onChange={evt => setNeighborhood(evt.target.value)}></input>
-                <button type="submit">Register to NESTLY!</button>
+                <button type="submit">Welcome to NESTLY!</button>
             </form>
         </div >
     )

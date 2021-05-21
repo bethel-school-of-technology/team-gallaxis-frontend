@@ -1,12 +1,25 @@
-import React from 'react';
+import { useState } from 'react';
+import axios from 'axios';
 
-const BuySell = ({ match }) => {
+
+
+const BuySell = () => {
+
+    const [buySellPosts, setBuySellPosts] = useState([]);
+
+    function getAllPosts() {
+        axios.get("http://localhost:3000/BuySell", {
+            headers: {
+                Authorization: localStorage.getItem("myJWTToken")
+            }
+        })
+            .then(APIResponse => {
+                console.log(APIResponse);
+            })
+    }
+
     return (
-        <div>
-            <h3>Buy and Sell</h3>
-        </div>
-
-
+        <button type="button" onClick={buySellPosts}>GET POSTS</button>
     )
 };
 

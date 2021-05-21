@@ -1,5 +1,5 @@
 import { useState } from 'react';
-
+import axios from 'axios'
 
 const Home = (props) => {
 
@@ -14,7 +14,18 @@ const Home = (props) => {
             password
         }
         console.log(loginInfo);
+
+        axios.post("http://localhost:3000/Home", submitForm)
+            .then(APIResponse => {
+                console.log(APIResponse.data);
+                localStorage.setItem("myJWTToken", APIResponse.data)
+            }
+            )
+
+
+
     }
+
 
     return (
         <div>

@@ -27,8 +27,10 @@ const Register = () => {
         }
 
         axios.post("http://localhost:3000/users/signup", loginInfo)
-            .then(APIResponse.data);
-        console.log(loginInfo);
+            .then(APIResponse => {
+                console.log(APIResponse.data);
+
+            })
     }
 
     return (

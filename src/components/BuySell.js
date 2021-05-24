@@ -1,25 +1,40 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
-
-
 
 const BuySell = () => {
 
     const [buySellPosts, setBuySellPosts] = useState([]);
 
-    function getAllPosts() {
-        axios.get("http://localhost:3000/BuySell", {
+    useEffect(() => {
+        axios.get("http://localhost:3000/buysell", {
             headers: {
                 Authorization: localStorage.getItem("myJWTToken")
             }
         })
             .then(APIResponse => {
-                console.log(APIResponse);
+                console.log(APIResponse.data.buySell);
+                if (APIResponse.data.buySell) {
+                    setBuySellPosts(APIResponse.data.buySell)
+                } else {
+                    window.alert("Not Logged In");
+                }
             })
-    }
+    }, [])
+
 
     return (
-        <button type="button" onClick={buySellPosts}>GET POSTS</button>
+        <div>
+            {/*<button type="button" onClick={getAllPosts}>GET POSTS</button>*/}
+            <div>
+                {buySellPosts.map((singlePost) => {
+                    return (
+                        <p>{singlePost.PostTitle}</p>
+                    )
+                })}
+            </div>
+
+        </div>
+
     )
 };
 

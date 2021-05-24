@@ -1,7 +1,15 @@
+import axios from 'axios';
 import { useState } from 'react';
 
 
-const Register = (props) => {
+
+//const Register = () => {
+// <UserNavBar />
+//  const [values, setValues] = useState({
+//       username: '',
+//       email: '',
+
+const Register = () => {
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -15,9 +23,11 @@ const Register = (props) => {
             username,
             password,
             email,
-            neighborhood
-
+            neighborhood,
         }
+
+        axios.post("http://localhost:3000/users/signup", loginInfo)
+            .then(APIResponse.data);
         console.log(loginInfo);
     }
 
@@ -32,7 +42,7 @@ const Register = (props) => {
 
                 <input type="text" placeholder="Enter Email" name="email" onChange={evt => setEmail(evt.target.value)}></input>
 
-                <input type="text" placeholder="Enter Neighborhood" name="neighborhood" onChange={evt => setNeighborhood(evt.target.value)}></input>
+                <input type="text" placeholder="Enter Neighborhood" name="Neighborhood" onChange={evt => setNeighborhood(evt.target.value)}></input>
                 <button type="submit">Welcome to NESTLY!</button>
             </form>
         </div >
